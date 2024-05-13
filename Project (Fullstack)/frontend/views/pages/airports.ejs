@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="jumbotron">
+                <p><%= locals.tagline %></p>
+                <ul>
+                    <% if (locals.airports) { %>
+
+                        <% locals.airports.forEach(function(airport) { %>
+                            <li>
+                                <strong>Airport Code: <%= airport.airportcode %></strong>, Airport Name:
+                                <%= airport.airportname %>, Country: <%= airport.country %>
+                            </li>
+                        <% }); %>
+                    
+                    <% } %>
+                    
+                </ul>
+            </div>
+        </div>
+
+    <div class="col-sm-4">
+        <div class="well">
+            <h3>Delete an airport by entering the airportname below:</h3>
+            
+    <div class="col-sm-4">
+        <div class="well">
+                <div>
+                    <form action="/process_form_del_airports" method="post">
+                        <div class="form-group1">
+                            <label for="deleteairportname" class="form-label"></label>
+                            <input type="text" id="airportname1" name="airportname1" class="form-control" placeholder="airportname" 
+                            autofocus>
+                            <input class="btn btn-lg btn-primary btn-block" type="submit">
+                        </div>
+
+                    </form>
+                </div>
+        </div>
+    </div>
+
+</div>
+</main>
+<!-- This is how I was trying to input the new airport data but no matter what I tried I recieved an error. I refined the error to a syntax issue but I do not know what it is. Postman still inserts data using the same syntax. 
+    It is also very important to not that the reason I have this portion commented out is because the delete operation crashes. -->
+<div class="col-sm-4">
+    <div class="well">
+        <h3>Add a airport by entering its details below:</h3>
+            <div>
+                <form action="/process_form_airports" method="post">
+                    <div class="form-group">
+                        <label for="airportcode" class="form-label"></label>
+                        <input type="text" id="airportcode" name="airportcode" class="form-control" placeholder="airportcode" 
+                        autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="airportname" class="form-label"></label>
+                        <input type="text" id="airportname" name="airportname" class="form-control" placeholder="airportname"
+                        autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="country" class="form-label"></label>
+                        <input type="text" id="country" name="country" class="form-control" placeholder="country"
+                        autofocus>
+                    </div>
+                    <input class="btn btn-lg btn-primary btn-block" type="submit">
+                </form>
+            </div>
+    </div>
+</div>
+
+<div class="col-sm-4">
+    <div class="well">
+        <h3>Update an airport by entering its details below:</h3>
+            <div>
+                <form action="/process_form_update_airports" method="post">
+                    <div class="form-group">
+                        <label for="airportcode2" class="form-label"></label>
+                        <input type="text" id="airportcode2" name="airportcode2" class="form-control" placeholder="airportcode" 
+                        autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="airportname2" class="form-label"></label>
+                        <input type="text" id="airportname2" name="airportname2" class="form-control" placeholder="airportname"
+                        autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="country2" class="form-label"></label>
+                        <input type="text" id="country2" name="country2" class="form-control" placeholder="country"
+                        autofocus>
+                    </div>
+                    <input class="btn btn-lg btn-primary btn-block" type="submit">
+                </form>
+            </div>
+    </div>
+</div>
+
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

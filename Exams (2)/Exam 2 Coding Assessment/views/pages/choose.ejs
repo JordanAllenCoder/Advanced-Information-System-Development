@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+<div class="row">
+    <div class="bg-info col-sm-12">
+        <div class="jumbotron" >
+            <% if (locals.music) { %>
+                <p style="color:rgb(40, 40, 53);font-size:20px;" class="split-para"><B>First Name: </B><span><%= locals.music.results[0].name.first %> %></span></p>
+                <p style="color:rgb(40, 40, 53);font-size:20px;" class="split-para"><B>Last Name: </B><span><%= locals.music.results[0].name.last %> %></span></p>
+                <p style="color:rgb(40, 40, 53);font-size:20px;" class="split-para"><b>Street Number: </b><span><%= locals.music.results[0].location.street.number %> %></span></p>
+                <p style="color:rgb(40, 40, 53);font-size:20px;" class="split-para"><b>Street Name: </b><span><%= locals.music.results[0].location.street.name %> %></span></p>
+                <p style="color:rgb(40, 40, 53);font-size:20px;" class="split-para"><b>Zip Code: </b><span><%= locals.music.results[0].location.postcode %> %></span></p>
+                <p style="color:rgb(40, 40, 53);font-size:20px;" class="split-para"><b>City: </b><span><%= locals.music.results[0].location.city %> %></span></p>
+                <p style="color:rgb(40, 40, 53);font-size:20px;" class="split-para"><b>State: </b><span><%= locals.music.results[0].location.state %> %></span></p>
+                <p style="color:rgb(40, 40, 53);font-size:20px;" class="split-para"><b>Country: </b><span><%= locals.music.results[0].location.country %> %></span></p>
+                <p style="color:rgb(40, 40, 53);font-size:20px;" class="split-para"><b>Local Time for the person: </b><span><%= locals.music.results[0].location.timezone.description %> %></span></p>
+                <% } %>
+            <br>
+        </div>
+    </div>
+
+</div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

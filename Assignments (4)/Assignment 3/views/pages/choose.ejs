@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+<div class="row">
+    <div class="col-sm-8">
+        <div class="jumbotron">
+            <% if (locals.music) { %>
+                <p><b><big>Results:</big></b></p>
+                <p><b>Artist Name: </b></p>
+                <p><%= locals.music.results[0].artistName %></p>
+                <p>First song name: </p>
+                <p><%= locals.music.results[0].trackName %></p>
+                <p>Artist Name: </p>
+                <p><%= locals.music.results[1].artistName %></p>
+                <p>Second song name: </p>
+                <p><%= locals.music.results[1].trackName %></p>
+                <p>Artist Name: </p>
+                <p><%= locals.music.results[2].artistName %></p>
+                <p>Third song name: </p>
+                <p><%= locals.music.results[2].trackName %></p>
+                <p>Artist Name: </p>
+                <p><%= locals.music.results[3].artistName %></p>
+                <p>Fourth song name: </p>
+                <p><%= locals.music.results[3].trackName %></p>
+                <p>Artist Name: </p>
+                <p><%= locals.music.results[4].artistName %></p>
+                <p>Fifth song name: </p>
+                <p><%= locals.music.results[4].trackName %></p>
+                <p>Artist Name: </p>
+                <p><%= locals.music.results[5].artistName %></p>
+                <p>Sixth song name: </p>
+                <p><%= locals.music.results[5].trackName %></p>
+                <p>Artist Name: </p>
+                <p><%= locals.music.results[6].artistName %></p>
+                <p>Seventh song name: </p>
+                <p><%= locals.music.results[6].trackName %></p>
+                <p>Artist Name: </p>
+                <p><%= locals.music.results[7].artistName %></p>
+                <p>Eighth song name: </p>
+                <p><%= locals.music.results[7].trackName %></p>
+                <p>Artist Name: </p>
+                <p><%= locals.music.results[8].artistName %></p>
+                <p>Ninth song name: </p>
+                <p><%= locals.music.results[8].trackName %></p>
+                <p>Artist Name: </p>
+                <p><%= locals.music.results[9].artistName %></p>
+                <p>Tenth song name: </p>
+                <p><%= locals.music.results[9].trackName %></p>
+                <% } %>
+            <br>
+            <% if (!locals.music) { %>
+                <p>WE HAVE NO MUSIC</p>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="well">
+            <h3>
+                Please Type the Name of the Artist or Band Below:
+                <div>
+                    <form action="/process_form" method="post">
+                        <div class="form-group">
+                            <label for="searchartist" class="form-label"></label>
+                            <input type="text" id="artist" name="artist" class="form-control" placeholder="Artist of Band Name" required
+                            autofocus>
+                </div>
+
+                <input class="btn btn-lg btn-primary btn-block" type="submit">
+            </h3>
+        </div>
+    </div>
+
+</div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
